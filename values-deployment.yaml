@@ -1,0 +1,11 @@
+# custom user playbooks
+customPlaybooks:
+
+- triggers:
+  - on_deployment_update:
+      namespace_prefix: default
+  actions:
+  - resource_babysitter:
+     omitted_fields: []
+     fields_to_monitor:
+     - spec.template.spec.containers[0].image
