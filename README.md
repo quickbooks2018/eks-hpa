@@ -32,5 +32,8 @@ kubectl top pods -n default
 
 - Load Testing
 ```bash
-curl 
+kubectl get pods -n default
+kubectl port-forward pod/express-dbcffc854-lcddl --address 0.0.0.0 8080:8080 -n default
+curl localhost:8080/cpu
+curl localhost:8080/memory
 ```
